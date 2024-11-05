@@ -1,5 +1,5 @@
 # SQL
-Examples of the SQL queries I created (PostgreSQL &amp; Clickhouse):
+Examples of the SQL queries I created (PostgreSQL; Clickhouse):
 
 **Templates_selected.sql** - window functions, CTE
 
