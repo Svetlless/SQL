@@ -17,22 +17,22 @@ The data are on the end of each week (not on each day) are presented. For each d
 /*Task 1. How many organic avocados were sold by the end of each week (cumulative sum) in New York and Los Angeles from 04/01/15?*/
   SELECT date,
          region,
-         SUM(total_volume) OVER w AS revenue_sum
+         SUM(total_volume) OVER w AS cumulative_sum
     FROM avocado
    WHERE (region = 'NewYork' OR region = 'LosAngeles')
          AND type = 'organic'
-		 AND date >= '2015-01-04'
+         AND date >= '2015-01-04'
 WINDOW w AS
-	     (PARTITION BY region
-	     ORDER BY date ASC
-	     RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) --because the dataset includes the data on each week
+	    (PARTITION BY region
+	    ORDER BY date ASC
+	    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) --because the dataset includes the data on each week
 ORDER BY region DESC, date ASC
 
 /*Task 2. Find out when the sales (total_volume) of conventional avocados fell sharply compared to the previous week in the USA.*/
 
   SELECT date,
-  	     region,
-	     total_volume,
+  	 region,
+	 total_volume,
          total_volume - LAG(total_volume, 1) OVER w AS week_diff
     FROM avocado
    WHERE region = 'TotalUS' AND type = 'conventional'
