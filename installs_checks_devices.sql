@@ -54,8 +54,7 @@ Note that purchases that cost 0 rubles are also considered to be purchases.*/
   SELECT COUNT(ch.Rub) as purchases,
          u.Source as source
     FROM checks as ch
-    JOIN (
-	      SELECT i.Source AS Source,
+    JOIN (SELECT i.Source AS Source,
                  d.UserID AS UserID
             FROM installs as i
             JOIN devices as d
