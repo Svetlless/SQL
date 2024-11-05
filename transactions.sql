@@ -9,19 +9,18 @@
     CustomerID
     Country
 	
-The first task is to calculare average order value (AOV) for each country.
+The first task is to calculate average order value (AOV) for each country.
 Please note that the order can include several identical items. 
 NB! The dataset may include negative Quantity values, which means the order was canceled.*/ 
 
   SELECT Country,
          AVG(TotalPrice) AS Avg_Check
-    FROM (
-          SELECT Country,
-                 SUM(UnitPrice*Quantity) AS TotalPrice,
-                 InvoiceNo
-            FROM retail
-           WHERE Quantity > 0
-        GROUP BY InvoiceNo, Country)
+    FROM ( SELECT Country,
+                  SUM(UnitPrice*Quantity) AS TotalPrice,
+                  InvoiceNo
+             FROM retail
+            WHERE Quantity > 0
+         GROUP BY InvoiceNo, Country)
 GROUP BY Country
 
 /*The next task is to find top-5 countries based on revenue.
