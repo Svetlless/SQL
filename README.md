@@ -9,3 +9,5 @@ The queries are organized based on the dataset:
     transactions: aggregate functions (Clickhouse), CTE, window functions
 
     installs_checks_devices: join, subqueries, aggregate functions  (Clickhouse)
+
+    airbnb: join, CTE, subqueries, aggregate functions  (Clickhouse)
