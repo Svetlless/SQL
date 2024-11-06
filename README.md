@@ -6,6 +6,6 @@ The queries are organized based on the dataset:
 
     avocado_sales: window functions, aggregate functions (Clickhouse)
 
-    transactions: aggregate functions (Clickhouse)
+    transactions: aggregate functions (Clickhouse), CTE, window functions
 
     installs_checks_devices: join, subqueries, aggregate functions  (Clickhouse)
