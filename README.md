@@ -1,6 +1,5 @@
 # SQL
-Examples of the SQL queries I created (PostgreSQL; Clickhouse)
-The queries are organized based on the dataset:
+Examples of the SQL queries I created (PostgreSQL; Clickhouse). The queries are organized based on the dataset:
 
     templates_selected: window functions, CTE, conditional expressions, aggregate functions (PostgreSQL)
 
