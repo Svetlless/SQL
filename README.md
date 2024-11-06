@@ -1,4 +1,3 @@
-# SQL
 Examples of the SQL queries I created (PostgreSQL; Clickhouse). The queries are organized based on the dataset:
 
     airbnb: join, CTE, subqueries, aggregate functions  (Clickhouse)
